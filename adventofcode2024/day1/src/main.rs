@@ -8,7 +8,7 @@ fn main() {
     list2.sort();
 
     let total_distance: usize = std::iter::zip(&list1, &list2)
-        .map(|(num1, num2)| isize::abs(*num1 as isize - *num2 as isize) as usize)
+        .map(|(num1, num2)| usize::abs_diff(*num1, *num2) as usize)
         .sum();
 
     let similarity_score = calculate_similarity(&list1, &list2);
